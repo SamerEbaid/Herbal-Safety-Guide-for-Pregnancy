@@ -820,8 +820,8 @@
                     <div>
                         <div class="title-en">Herbal Safety Guide</div>
                         <div class="title-ar" style="display: none;">دليل السلامة العشبية</div>
-                        <div class="disclaimer disclaimer-en">For Pregnancy & Breastfeeding</div>
-                        <div class="disclaimer disclaimer-ar" style="display: none;">للحمل والرضاعة</div>
+                        <div class="disclaimer disclaimer-en">For Pregnancy</div>
+                        <div class="disclaimer disclaimer-ar" style="display: none;">للحمل</div>
                     </div>
                 </div>
                 <div class="tagline">
@@ -983,13 +983,9 @@
                         <li class="select-herb-side-ar" style="display: none;">اختر عشباً لرؤية الآثار الجانبية</li>
                     </ul>
                     
-                    <h3 class="breastfeeding-title-en">Safety During Breastfeeding</h3>
-                    <h3 class="breastfeeding-title-ar" style="display: none;">السلامة أثناء الرضاعة</h3>
-                    <p id="breastfeedingSafety">Select an herb to view breastfeeding safety information.</p>
-                    
                     <div class="warning">
-                        <p class="warning-text-en"><strong>Important:</strong> This information is for educational purposes only. Always consult with your healthcare provider before using any herbs during pregnancy or breastfeeding, especially during your specific trimester.</p>
-                        <p class="warning-text-ar" style="display: none;"><strong>هام:</strong> هذه المعلومات لأغراض تعليمية فقط. استشر مقدم الرعاية الصحية الخاص بك دائمًا قبل استخدام أي أعشاب أثناء الحمل أو الرضاعة، خاصة خلال الثلث المحدد.</p>
+                        <p class="warning-text-en"><strong>Important:</strong> This information is for educational purposes only. Always consult with your healthcare provider before using any herbs during pregnancy, especially during your specific trimester.</p>
+                        <p class="warning-text-ar" style="display: none;"><strong>هام:</strong> هذه المعلومات لأغراض تعليمية فقط. استشر مقدم الرعاية الصحية الخاص بك دائمًا قبل استخدام أي أعشاب أثناء الحمل، خاصة خلال الثلث المحدد.</p>
                     </div>
                     
                     <button class="back-btn" id="backBtn">
@@ -1010,8 +1006,8 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <p class="footer-disclaimer-en"><strong>Disclaimer:</strong> The information provided on this website is for educational purposes only and is not intended as medical advice. Always consult with a qualified healthcare professional before using any herbs or supplements during pregnancy or breastfeeding.</p>
-                <p class="footer-disclaimer-ar" style="display: none;"><strong>تنبيه:</strong> المعلومات المقدمة على هذا الموقع هي لأغراض تعليمية فقط وليست نصيحة طبية. استشر دائمًا أخصائي رعاية صحية مؤهل قبل استخدام أي أعشاب أو مكملات أثناء الحمل أو الرضاعة.</p>
+                <p class="footer-disclaimer-en"><strong>Disclaimer:</strong> The information provided on this website is for educational purposes only and is not intended as medical advice. Always consult with a qualified healthcare professional before using any herbs or supplements during pregnancy.</p>
+                <p class="footer-disclaimer-ar" style="display: none;"><strong>تنبيه:</strong> المعلومات المقدمة على هذا الموقع هي لأغراض تعليمية فقط وليست نصيحة طبية. استشر دائمًا أخصائي رعاية صحية مؤهل قبل استخدام أي أعشاب أو مكملات أثناء الحمل.</p>
                 <p class="footer-copyright-en">© 2023 Herbal Safety Guide for Pregnancy. All information is based on current herbal safety research.</p>
                 <p class="footer-copyright-ar" style="display: none;">© 2023 دليل السلامة العشبية للحمل. كل المعلومات مبنية على أبحاث سلامة الأعشاب الحالية.</p>
             </div>
@@ -1237,6 +1233,9 @@
                     return str.split(';').map(s => s.trim()).filter(s => s.length > 0);
                 };
 
+                // Check if breastfeeding data exists (not empty)
+                const hasBreastfeedingData = item.Breastfeeding_EN && item.Breastfeeding_EN.trim() !== '';
+
                 return {
                     id: item.Herb_ID,
                     name_en: item.Name_EN || '',
@@ -1248,8 +1247,10 @@
                     safety_description_ar: item.Safety_Desc_AR || '',
                     side_effects_en: splitBySemicolon(item.Side_Effects_EN),
                     side_effects_ar: splitBySemicolon(item.Side_Effects_AR),
-                    breastfeeding_safety_en: item.Breastfeeding_EN || '',
-                    breastfeeding_safety_ar: item.Breastfeeding_AR || '',
+                    // Only include breastfeeding data if it exists
+                    has_breastfeeding: hasBreastfeedingData,
+                    breastfeeding_safety_en: hasBreastfeedingData ? item.Breastfeeding_EN : '',
+                    breastfeeding_safety_ar: hasBreastfeedingData ? item.Breastfeeding_AR : '',
                     trimester1_safety: (item.Trimester1_Safety || 'caution').toLowerCase(),
                     trimester1_guidance_en: splitBySemicolon(item.Trimester1_Guidance_EN),
                     trimester1_guidance_ar: splitBySemicolon(item.Trimester1_Guidance_AR),
@@ -1296,7 +1297,6 @@
         const safetyStatusElement = document.getElementById('safetyStatus');
         const safetyDescriptionElement = document.getElementById('safetyDescription');
         const sideEffectsElement = document.getElementById('sideEffects');
-        const breastfeedingSafetyElement = document.getElementById('breastfeedingSafety');
 
         // Filter tabs
         const filterTabs = document.querySelectorAll('.filter-tab');
@@ -1314,8 +1314,8 @@
             });
             
             // Show/hide English/Arabic elements
-            const englishElements = document.querySelectorAll('.title-en, .disclaimer-en, .tagline-en, .tracker-title-en, .tracker-desc-en, .trimester-text-en, .select-month-en, .search-title-en, .search-desc-en, .quick-search-title-en, .current-stage-text-en, .select-herb-text-en, .general-safety-en, .side-effects-en, .breastfeeding-title-en, .warning-text-en, .back-text-en, .footer-disclaimer-en, .footer-copyright-en, .select-herb-side-en, .legend-title-en, .legend-safe-en, .legend-caution-en, .legend-unsafe-en, .filter-all-en, .filter-safe-en, .filter-caution-en, .filter-unsafe-en');
-            const arabicElements = document.querySelectorAll('.title-ar, .disclaimer-ar, .tagline-ar, .tracker-title-ar, .tracker-desc-ar, .trimester-text-ar, .select-month-ar, .search-title-ar, .search-desc-ar, .quick-search-title-ar, .current-stage-text-ar, .select-herb-text-ar, .general-safety-ar, .side-effects-ar, .breastfeeding-title-ar, .warning-text-ar, .back-text-ar, .footer-disclaimer-ar, .footer-copyright-ar, .select-herb-side-ar, .legend-title-ar, .legend-safe-ar, .legend-caution-ar, .legend-unsafe-ar, .filter-all-ar, .filter-safe-ar, .filter-caution-ar, .filter-unsafe-ar');
+            const englishElements = document.querySelectorAll('.title-en, .disclaimer-en, .tagline-en, .tracker-title-en, .tracker-desc-en, .trimester-text-en, .select-month-en, .search-title-en, .search-desc-en, .quick-search-title-en, .current-stage-text-en, .select-herb-text-en, .general-safety-en, .side-effects-en, .warning-text-en, .back-text-en, .footer-disclaimer-en, .footer-copyright-en, .select-herb-side-en, .legend-title-en, .legend-safe-en, .legend-caution-en, .legend-unsafe-en, .filter-all-en, .filter-safe-en, .filter-caution-en, .filter-unsafe-en');
+            const arabicElements = document.querySelectorAll('.title-ar, .disclaimer-ar, .tagline-ar, .tracker-title-ar, .tracker-desc-ar, .trimester-text-ar, .select-month-ar, .search-title-ar, .search-desc-ar, .quick-search-title-ar, .current-stage-text-ar, .select-herb-text-ar, .general-safety-ar, .side-effects-ar, .warning-text-ar, .back-text-ar, .footer-disclaimer-ar, .footer-copyright-ar, .select-herb-side-ar, .legend-title-ar, .legend-safe-ar, .legend-caution-ar, .legend-unsafe-ar, .filter-all-ar, .filter-safe-ar, .filter-caution-ar, .filter-unsafe-ar');
             
             if (lang === 'en') {
                 englishElements.forEach(el => el.style.display = '');
@@ -1794,14 +1794,12 @@
             const name = currentLanguage === 'en' ? herb.name_en : herb.name_ar;
             const otherName = currentLanguage === 'en' ? herb.name_ar : herb.name_en;
             const safetyDescription = currentLanguage === 'en' ? herb.safety_description_en : herb.safety_description_ar;
-            const breastfeedingSafety = currentLanguage === 'en' ? herb.breastfeeding_safety_en : herb.breastfeeding_safety_ar;
             
             herbNameElement.textContent = name;
             herbNameArabicElement.textContent = currentLanguage === 'en' ? `(${otherName})` : `(${otherName})`;
             herbNameArabicElement.style.display = 'block';
             
             safetyDescriptionElement.textContent = safetyDescription;
-            breastfeedingSafetyElement.textContent = breastfeedingSafety;
             
             // Update side effects list
             sideEffectsElement.innerHTML = '';
