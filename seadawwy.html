@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herbal Safety Guide for Pregnancy / دليل السلامة العشبية للحمل</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ALL YOUR CSS FROM BEFORE (keep the same styles) */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-color: #8b5e83;
+            --secondary-color: #f8f1f7;
+            --safe-color: #4CAF50;
+            --caution-color: #FF9800;
+            --unsafe-color: #F44336;
+            --text-color: #333;
+            --light-text: #666;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --first-trimester: #ffcdd2;
+            --second-trimester: #fff9c4;
+            --third-trimester: #c8e6c9;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            text-align: right;
+            padding: 10px 0;
+            margin-bottom: 5px;
+        }
+
+        .lang-btn {
+            background: none;
+            border: 1px solid var(--primary-color);
+            padding: 5px 15px;
+            margin: 0 3px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .lang-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #a37b9c);
+            color: white;
+            padding: 1.5rem 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .logo i {
+            font-size: 2rem;
+        }
+
+        .disclaimer {
+            font-size: 0.85rem;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 8px 15px;
+            border-radius: 20px;
+            margin-top: 5px;
+        }
+
+        /* Pregnancy Tracker */
+        .tracker-section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 1.5rem 2rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+
+        .tracker-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .tracker-title i {
+            font-size: 1.5rem;
+        }
+
+        .tracker-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 1rem;
+        }
+
+        .trimester-btn {
+            background-color: var(--secondary-color);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            color: var(--primary-color);
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .trimester-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .trimester-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .month-selector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .month-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #ddd;
+            background-color: white;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .month-btn:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .month-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .tracker-display {
+            background-color: var(--secondary-color);
+            padding: 1.2rem;
+            border-radius: 10px;
+            margin-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .tracker-display i {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+        .tracker-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        /* Search Section */
+        .search-section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+
+        .search-box {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 15px 20px 15px 50px;
+            font-size: 1.1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .quick-search {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .quick-search-btn {
+            background-color: var(--secondary-color);
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            color: var(--primary-color);
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .quick-search-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Results Section */
+        .results-section {
+            display: none;
+            background-color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+
+        .results-section.active {
+            display: block;
+        }
+
+        .herb-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .herb-name {
+            font-size: 2rem;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .safety-status {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .safety-status.safe {
+            background-color: var(--safe-color);
+        }
+
+        .safety-status.caution {
+            background-color: var(--caution-color);
+        }
+
+        .safety-status.unsafe {
+            background-color: var(--unsafe-color);
+        }
+
+        /* Bilingual Herb Name */
+        .herb-name-arabic {
+            font-size: 1.5rem;
+            color: #666;
+            margin-top: 5px;
+            font-weight: normal;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        /* Trimester Safety */
+        .trimester-safety {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 1.5rem 0;
+        }
+
+        .trimester-card {
+            border-radius: 10px;
+            padding: 1.2rem;
+            text-align: center;
+        }
+
+        .trimester-card.first {
+            background-color: var(--first-trimester);
+        }
+
+        .trimester-card.second {
+            background-color: var(--second-trimester);
+        }
+
+        .trimester-card.third {
+            background-color: var(--third-trimester);
+        }
+
+        .trimester-card h4 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .trimester-status {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: white;
+            margin-top: 5px;
+        }
+
+        .trimester-status.safe {
+            background-color: var(--safe-color);
+        }
+
+        .trimester-status.caution {
+            background-color: var(--caution-color);
+        }
+
+        .trimester-status.unsafe {
+            background-color: var(--unsafe-color);
+        }
+
+        .herb-details h3 {
+            color: var(--primary-color);
+            margin: 1.5rem 0 0.8rem 0;
+            font-size: 1.3rem;
+        }
+
+        .herb-details p, .herb-details ul {
+            margin-bottom: 1rem;
+        }
+
+        .herb-details ul {
+            padding-left: 1.5rem;
+        }
+
+        .herb-details li {
+            margin-bottom: 0.5rem;
+        }
+
+        .month-guidance {
+            background-color: #f5f5f5;
+            padding: 1.2rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+        }
+
+        .month-guidance h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .month-guidance ul {
+            padding-left: 1.5rem;
+        }
+
+        .back-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: #7a4f72;
+        }
+
+        /* Herb Grid */
+        .herb-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .herb-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .herb-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .herb-card-header {
+            padding: 1.2rem;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .herb-card-body {
+            padding: 1.2rem;
+        }
+
+        .herb-card-description {
+            color: var(--light-text);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .herb-card-status {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .footer-content p {
+            margin-bottom: 1rem;
+            max-width: 800px;
+            color: #ccc;
+        }
+
+        .warning {
+            background-color: rgba(255, 87, 87, 0.1);
+            border-left: 4px solid var(--unsafe-color);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Text Direction for Arabic */
+        [dir="rtl"] {
+            text-align: right;
+        }
+        
+        [dir="rtl"] .herb-details ul {
+            padding-right: 1.5rem;
+            padding-left: 0;
+        }
+        
+        [dir="rtl"] .month-guidance ul {
+            padding-right: 1.5rem;
+            padding-left: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .disclaimer {
+                margin-top: 10px;
+            }
+
+            .herb-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .tracker-section, .search-section, .results-section {
+                padding: 1.5rem;
+            }
+
+            .trimester-safety {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .month-selector {
+                justify-content: center;
+            }
+
+            .herb-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .logo i {
+                font-size: 1.7rem;
+            }
+
+            .herb-name {
+                font-size: 1.7rem;
+            }
+
+            .herb-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .trimester-options {
+                flex-direction: column;
+            }
+
+            .trimester-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="container language-switcher">
+        <button class="lang-btn active" data-lang="en">English</button>
+        <button class="lang-btn" data-lang="ar">العربية</button>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-leaf"></i>
+                    <div>
+                        <div class="title-en">Herbal Safety Guide</div>
+                        <div class="title-ar" style="display: none;">دليل السلامة العشبية</div>
+                        <div class="disclaimer disclaimer-en">For Pregnancy & Breastfeeding</div>
+                        <div class="disclaimer disclaimer-ar" style="display: none;">للحمل والرضاعة</div>
+                    </div>
+                </div>
+                <div class="tagline">
+                    <p class="tagline-en">Research herbal safety by pregnancy stage</p>
+                    <p class="tagline-ar" style="display: none;">ابحث عن سلامة الأعشاب حسب مرحلة الحمل</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="main-content">
+            <!-- Pregnancy Tracker Section -->
+            <section class="tracker-section">
+                <div class="tracker-title">
+                    <i class="fas fa-baby"></i>
+                    <h2 class="tracker-title-en">Pregnancy Tracker</h2>
+                    <h2 class="tracker-title-ar" style="display: none;">متابعة الحمل</h2>
+                </div>
+                <p class="tracker-desc-en">Select your current trimester or specific month for personalized herb safety information:</p>
+                <p class="tracker-desc-ar" style="display: none;">اختر ثلث الحمل الحالي أو شهر محدد للحصول على معلومات سلامة الأعشاب:</p>
+                
+                <div class="tracker-options">
+                    <button class="trimester-btn" data-trimester="1">
+                        <i class="fas fa-1"></i> 
+                        <span class="trimester-text-en">First Trimester (Months 1-3)</span>
+                        <span class="trimester-text-ar" style="display: none;">الثلث الأول (الأشهر 1-3)</span>
+                    </button>
+                    <button class="trimester-btn" data-trimester="2">
+                        <i class="fas fa-2"></i> 
+                        <span class="trimester-text-en">Second Trimester (Months 4-6)</span>
+                        <span class="trimester-text-ar" style="display: none;">الثلث الثاني (الأشهر 4-6)</span>
+                    </button>
+                    <button class="trimester-btn" data-trimester="3">
+                        <i class="fas fa-3"></i> 
+                        <span class="trimester-text-en">Third Trimester (Months 7-9)</span>
+                        <span class="trimester-text-ar" style="display: none;">الثلث الثالث (الأشهر 7-9)</span>
+                    </button>
+                </div>
+                
+                <p class="select-month-en">Or select a specific month:</p>
+                <p class="select-month-ar" style="display: none;">أو اختر شهراً محدداً:</p>
+                <div class="month-selector" id="monthSelector">
+                    <!-- Months 1-9 will be generated by JavaScript -->
+                </div>
+                
+                <div class="tracker-display">
+                    <i class="fas fa-calendar-alt"></i>
+                    <div class="tracker-info">
+                        <h3 id="currentStage">First Trimester</h3>
+                        <p id="currentMonth">Month 1-3</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Search Section -->
+            <section class="search-section">
+                <h2 class="search-title-en">Search Herbs for Pregnancy Safety</h2>
+                <h2 class="search-title-ar" style="display: none;">ابحث عن الأعشاب لسلامة الحمل</h2>
+                <p class="search-desc-en">Enter the name of an herb to check its safety during your current pregnancy stage</p>
+                <p class="search-desc-ar" style="display: none;">أدخل اسم عشب للتحقق من سلامته خلال مرحلة الحمل الحالية</p>
+                
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="herbSearch" class="search-placeholder-en" placeholder="Search for an herb (e.g., Ginger, Chamomile, Echinacea)">
+                </div>
+                
+                <p class="quick-search-title-en">Quick search:</p>
+                <p class="quick-search-title-ar" style="display: none;">بحث سريع:</p>
+                <div class="quick-search" id="quickSearch">
+                    <!-- Quick search buttons will be updated dynamically -->
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section" id="resultsSection">
+                <div class="herb-header">
+                    <div>
+                        <h1 class="herb-name" id="herbName">Select an herb to view details</h1>
+                        <div class="herb-name-arabic" id="herbNameArabic"></div>
+                    </div>
+                    <div class="safety-status caution" id="safetyStatus">Select Herb</div>
+                </div>
+                
+                <!-- Trimester Safety Overview -->
+                <div class="trimester-safety" id="trimesterSafety">
+                    <!-- Trimester cards will be generated by JavaScript -->
+                </div>
+                
+                <!-- Month-Specific Guidance -->
+                <div class="month-guidance" id="monthGuidance">
+                    <h4><i class="fas fa-calendar-check"></i> <span class="current-stage-text-en">Safety in Your Current Stage</span><span class="current-stage-text-ar" style="display: none;">السلامة في مرحلتك الحالية</span> (<span id="currentStageText">First Trimester</span>)</h4>
+                    <div id="specificGuidance">
+                        <p class="select-herb-text-en">Select an herb from the list to see safety information specific to your pregnancy stage.</p>
+                        <p class="select-herb-text-ar" style="display: none;">اختر عشباً من القائمة لرؤية معلومات السلامة الخاصة بمرحلة الحمل.</p>
+                    </div>
+                </div>
+                
+                <!-- General Herb Details -->
+                <div class="herb-details">
+                    <h3 class="general-safety-en">General Safety During Pregnancy</h3>
+                    <h3 class="general-safety-ar" style="display: none;">السلامة العامة أثناء الحمل</h3>
+                    <p id="safetyDescription">Select an herb to view its safety information during pregnancy.</p>
+                    
+                    <h3 class="side-effects-en">Potential Side Effects & Precautions</h3>
+                    <h3 class="side-effects-ar" style="display: none;">الآثار الجانبية المحتملة والاحتياطات</h3>
+                    <ul id="sideEffects">
+                        <li class="select-herb-side-en">Select an herb to view side effects</li>
+                        <li class="select-herb-side-ar" style="display: none;">اختر عشباً لرؤية الآثار الجانبية</li>
+                    </ul>
+                    
+                    <h3 class="breastfeeding-title-en">Safety During Breastfeeding</h3>
+                    <h3 class="breastfeeding-title-ar" style="display: none;">السلامة أثناء الرضاعة</h3>
+                    <p id="breastfeedingSafety">Select an herb to view breastfeeding safety information.</p>
+                    
+                    <div class="warning">
+                        <p class="warning-text-en"><strong>Important:</strong> This information is for educational purposes only. Always consult with your healthcare provider before using any herbs during pregnancy or breastfeeding, especially during your specific trimester.</p>
+                        <p class="warning-text-ar" style="display: none;"><strong>هام:</strong> هذه المعلومات لأغراض تعليمية فقط. استشر مقدم الرعاية الصحية الخاص بك دائمًا قبل استخدام أي أعشاب أثناء الحمل أو الرضاعة، خاصة خلال الثلث المحدد.</p>
+                    </div>
+                    
+                    <button class="back-btn" id="backBtn">
+                        <i class="fas fa-arrow-left"></i> 
+                        <span class="back-text-en">Back to Search</span>
+                        <span class="back-text-ar" style="display: none;">العودة للبحث</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Herb Grid -->
+            <section class="herb-grid" id="herbGrid">
+                <!-- Herb cards will be generated by JavaScript -->
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-disclaimer-en"><strong>Disclaimer:</strong> The information provided on this website is for educational purposes only and is not intended as medical advice. Always consult with a qualified healthcare professional before using any herbs or supplements during pregnancy or breastfeeding.</p>
+                <p class="footer-disclaimer-ar" style="display: none;"><strong>تنبيه:</strong> المعلومات المقدمة على هذا الموقع هي لأغراض تعليمية فقط وليست نصيحة طبية. استشر دائمًا أخصائي رعاية صحية مؤهل قبل استخدام أي أعشاب أو مكملات أثناء الحمل أو الرضاعة.</p>
+                <p class="footer-copyright-en">© 2023 Herbal Safety Guide for Pregnancy. All information is based on current herbal safety research.</p>
+                <p class="footer-copyright-ar" style="display: none;">© 2023 دليل السلامة العشبية للحمل. كل المعلومات مبنية على أبحاث سلامة الأعشاب الحالية.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ============================================
+        // YOUR EXCEL CONVERTED JSON DATA
+        // ============================================
+        const excelJsonData = [
+  {
+    "Herb_ID": "1",
+    "Name_EN": "Ginger",
+    "Name_AR": "الزنجبيل",
+    "Description_EN": "Commonly used for nausea and digestive issues",
+    "Description_AR": "يستخدم عادة للغثيان ومشاكل الهضم",
+    "Safety_Level": "safe",
+    "Safety_Desc_EN": "Generally considered safe during pregnancy when used in moderate amounts",
+    "Safety_Desc_AR": "يعتبر آمنًا بشكل عام أثناء الحمل عند استخدامه بكميات معتدلة",
+    "Breastfeeding_EN": "Generally considered safe during breastfeeding",
+    "Breastfeeding_AR": "يعتبر آمنًا بشكل عام أثناء الرضاعة",
+    "Trimester1_Safety": "safe",
+    "Trimester1_Guidance_EN": "Generally safe in moderate amounts; May help alleviate morning sickness",
+    "Trimester1_Guidance_AR": "آمن بشكل عام بكميات معتدلة; قد يساعد في تخفيف غثيان الصباح",
+    "Trimester2_Safety": "safe",
+    "Trimester2_Guidance_EN": "Generally safe in moderate amounts; May help with digestive discomfort",
+    "Trimester2_Guidance_AR": "آمن بشكل عام بكميات معتدلة; قد يساعد في عدم الراحة الهضمية",
+    "Trimester3_Safety": "caution",
+    "Trimester3_Guidance_EN": "Use with caution in third trimester; May increase risk of bleeding",
+    "Trimester3_Guidance_AR": "استخدم بحذر في الثلث الثالث; قد يزيد من خطر النزيف",
+    "Side_Effects_EN": "Heartburn; High doses should be avoided",
+    "Side_Effects_AR": "حرقة في المعدة; تجنب الجرعات العالية",
+    "Search_Terms_EN": "Zingiber officinale; Ginger root",
+    "Search_Terms_AR": "زنجبيل طبي; جذور الزنجبيل"
+  },
+  {
+    "Herb_ID": "2",
+    "Name_EN": "Peppermint",
+    "Name_AR": "النعناع الفلفلي",
+    "Description_EN": "Often used for digestive issues and headaches",
+    "Description_AR": "يستخدم غالبًا لمشاكل الهضم والصداع",
+    "Safety_Level": "safe",
+    "Safety_Desc_EN": "Peppermint tea is generally safe during pregnancy",
+    "Safety_Desc_AR": "شاي النعناع آمن بشكل عام أثناء الحمل",
+    "Breastfeeding_EN": "Peppermint tea is generally safe",
+    "Breastfeeding_AR": "شاي النعناع آمن بشكل عام",
+    "Trimester1_Safety": "safe",
+    "Trimester1_Guidance_EN": "Generally safe in moderate amounts as tea; May help relieve nausea",
+    "Trimester1_Guidance_AR": "آمن بشكل عام بكميات معتدلة كشاي; قد يساعد في تخفيف الغثيان",
+    "Trimester2_Safety": "safe",
+    "Trimester2_Guidance_EN": "Generally safe as tea or in food; May help with heartburn",
+    "Trimester2_Guidance_AR": "آمن بشكل عام كشاي أو في الطعام; قد يساعد في حرقة المعدة",
+    "Trimester3_Safety": "caution",
+    "Trimester3_Guidance_EN": "Use tea in moderation; Avoid peppermint oil",
+    "Trimester3_Guidance_AR": "استخدم الشاي باعتدال; تجنب زيت النعناع",
+    "Side_Effects_EN": "Heartburn; Can cause allergic reactions",
+    "Side_Effects_AR": "حرقة; يمكن أن يسبب ردود فعل تحسسية",
+    "Search_Terms_EN": "Mentha piperita; Mint",
+    "Search_Terms_AR": "نعناع فلفلي; نعناع"
+  },
+  {
+    "Herb_ID": "3",
+    "Name_EN": "Sage",
+    "Name_AR": "المريمية",
+    "Description_EN": "Used for cooking and medicinal purposes",
+    "Description_AR": "يستخدم للطهي والأغراض الطبية",
+    "Safety_Level": "unsafe",
+    "Safety_Desc_EN": "Avoid during pregnancy as it can cause uterine contractions",
+    "Safety_Desc_AR": "تجنب أثناء الحمل لأنه قد يسبب انقباضات الرحم",
+    "Breastfeeding_EN": "Use with caution during breastfeeding",
+    "Breastfeeding_AR": "استخدم بحذر أثناء الرضاعة",
+    "Trimester1_Safety": "unsafe",
+    "Trimester1_Guidance_EN": "Avoid during first trimester; May increase miscarriage risk",
+    "Trimester1_Guidance_AR": "تجنب في الثلث الأول; قد يزيد من خطر الإجهاض",
+    "Trimester2_Safety": "unsafe",
+    "Trimester2_Guidance_EN": "Avoid during pregnancy; Not recommended",
+    "Trimester2_Guidance_AR": "تجنب أثناء الحمل; غير موصى به",
+    "Trimester3_Safety": "unsafe",
+    "Trimester3_Guidance_EN": "Avoid during pregnancy; May trigger labor",
+    "Trimester3_Guidance_AR": "تجنب أثناء الحمل; قد يحفز المخاض",
+    "Side_Effects_EN": "Uterine contractions; Can affect menstrual cycle",
+    "Side_Effects_AR": "انقباضات الرحم; يمكن أن يؤثر على الدورة الشهرية",
+    "Search_Terms_EN": "Salvia officinalis",
+    "Search_Terms_AR": "قصعين; مريمية"
+  },
+  {
+    "Herb_ID": "4",
+    "Name_EN": "Chamomile",
+    "Name_AR": "البابونج",
+    "Description_EN": "Calming herb often used for relaxation and sleep",
+    "Description_AR": "عشب مهدئ يستخدم غالبًا للاسترخاء والنوم",
+    "Safety_Level": "caution",
+    "Safety_Desc_EN": "Generally safe in small amounts but use with caution",
+    "Safety_Desc_AR": "آمن بشكل عام بكميات صغيرة لكن استخدم بحذر",
+    "Breastfeeding_EN": "Generally safe in moderation",
+    "Breastfeeding_AR": "آمن بشكل عام باعتدال",
+    "Trimester1_Safety": "caution",
+    "Trimester1_Guidance_EN": "Use in small amounts only; Avoid large doses",
+    "Trimester1_Guidance_AR": "استخدم بكميات صغيرة فقط; تجنب الجرعات الكبيرة",
+    "Trimester2_Safety": "caution",
+    "Trimester2_Guidance_EN": "Generally safe as tea in moderation; Avoid extracts",
+    "Trimester2_Guidance_AR": "آمن بشكل عام كشاي باعتدال; تجنب المستخلصات",
+    "Trimester3_Safety": "caution",
+    "Trimester3_Guidance_EN": "Use with caution; May have mild sedative effects",
+    "Trimester3_Guidance_AR": "استخدم بحذر; قد يكون له تأثيرات مهدئة خفيفة",
+    "Side_Effects_EN": "Allergic reactions; Can interact with medications",
+    "Side_Effects_AR": "ردود فعل تحسسية; يمكن أن يتفاعل مع الأدوية",
+    "Search_Terms_EN": "Matricaria chamomilla; Camomile",
+    "Search_Terms_AR": "بابونج ألماني; كاموميل"
+  },
+  {
+    "Herb_ID": "5",
+    "Name_EN": "Rosemary",
+    "Name_AR": "إكليل الجبل",
+    "Description_EN": "Used in cooking, may affect blood pressure",
+    "Description_AR": "يستخدم في الطهي، قد يؤثر على ضغط الدم",
+    "Safety_Level": "caution",
+    "Safety_Desc_EN": "Avoid internal use during pregnancy; External use is generally safe",
+    "Safety_Desc_AR": "تجنب الاستخدام الداخلي أثناء الحمل; الاستخدام الخارجي آمن بشكل عام",
+    "Breastfeeding_EN": "Generally safe in food amounts",
+    "Breastfeeding_AR": "آمن بشكل عام بكميات الطعام",
+    "Trimester1_Safety": "unsafe",
+    "Trimester1_Guidance_EN": "Avoid internal use; External use only",
+    "Trimester1_Guidance_AR": "تجنب الاستخدام الداخلي; للاستخدام الخارجي فقط",
+    "Trimester2_Safety": "caution",
+    "Trimester2_Guidance_EN": "Avoid large amounts; May affect blood pressure",
+    "Trimester2_Guidance_AR": "تجنب الكميات الكبيرة; قد يؤثر على ضغط الدم",
+    "Trimester3_Safety": "unsafe",
+    "Trimester3_Guidance_EN": "Avoid during third trimester; May cause contractions",
+    "Trimester3_Guidance_AR": "تجنب في الثلث الثالث; قد يسبب انقباضات",
+    "Side_Effects_EN": "Increased blood pressure; Uterine stimulation",
+    "Side_Effects_AR": "زيادة ضغط الدم; تحفيز الرحم",
+    "Search_Terms_EN": "Rosmarinus officinalis",
+    "Search_Terms_AR": "روزماري; إكليل الجبل"
+  }
+];
+        // ============================================
+        // END OF DATA SECTION
+        // ============================================
+
+        // Process Excel data into app format
+        function processExcelData(data) {
+            return data.map(item => {
+                // Convert semicolon-separated strings to arrays
+                const splitBySemicolon = (str) => {
+                    if (!str) return [];
+                    return str.split(';').map(s => s.trim()).filter(s => s.length > 0);
+                };
+
+                return {
+                    id: item.Herb_ID,
+                    name_en: item.Name_EN || '',
+                    name_ar: item.Name_AR || '',
+                    description_en: item.Description_EN || '',
+                    description_ar: item.Description_AR || '',
+                    safety: (item.Safety_Level || 'caution').toLowerCase(),
+                    safety_description_en: item.Safety_Desc_EN || '',
+                    safety_description_ar: item.Safety_Desc_AR || '',
+                    side_effects_en: splitBySemicolon(item.Side_Effects_EN),
+                    side_effects_ar: splitBySemicolon(item.Side_Effects_AR),
+                    breastfeeding_safety_en: item.Breastfeeding_EN || '',
+                    breastfeeding_safety_ar: item.Breastfeeding_AR || '',
+                    trimester1_safety: (item.Trimester1_Safety || 'caution').toLowerCase(),
+                    trimester1_guidance_en: splitBySemicolon(item.Trimester1_Guidance_EN),
+                    trimester1_guidance_ar: splitBySemicolon(item.Trimester1_Guidance_AR),
+                    trimester2_safety: (item.Trimester2_Safety || 'caution').toLowerCase(),
+                    trimester2_guidance_en: splitBySemicolon(item.Trimester2_Guidance_EN),
+                    trimester2_guidance_ar: splitBySemicolon(item.Trimester2_Guidance_AR),
+                    trimester3_safety: (item.Trimester3_Safety || 'caution').toLowerCase(),
+                    trimester3_guidance_en: splitBySemicolon(item.Trimester3_Guidance_EN),
+                    trimester3_guidance_ar: splitBySemicolon(item.Trimester3_Guidance_AR),
+                    search_terms_en: splitBySemicolon(item.Search_Terms_EN),
+                    search_terms_ar: splitBySemicolon(item.Search_Terms_AR)
+                };
+            });
+        }
+
+        // Global herb database - processed from Excel data
+        let herbDatabase = [];
+        
+        // Current settings
+        let currentLanguage = 'en';
+        let currentTrimester = 1;
+        let currentMonth = 1;
+        let currentMonthRange = "1-3";
+
+        // DOM elements
+        const searchInput = document.getElementById('herbSearch');
+        const resultsSection = document.getElementById('resultsSection');
+        const herbGrid = document.getElementById('herbGrid');
+        const backBtn = document.getElementById('backBtn');
+        const quickSearchContainer = document.getElementById('quickSearch');
+        const trimesterBtns = document.querySelectorAll('.trimester-btn');
+        const monthSelector = document.getElementById('monthSelector');
+        const currentStageElement = document.getElementById('currentStage');
+        const currentMonthElement = document.getElementById('currentMonth');
+        const currentStageTextElement = document.getElementById('currentStageText');
+        const monthSpecificList = document.getElementById('specificGuidance');
+        const trimesterSafetyElement = document.getElementById('trimesterSafety');
+        
+        // Herb details elements
+        const herbNameElement = document.getElementById('herbName');
+        const herbNameArabicElement = document.getElementById('herbNameArabic');
+        const safetyStatusElement = document.getElementById('safetyStatus');
+        const safetyDescriptionElement = document.getElementById('safetyDescription');
+        const sideEffectsElement = document.getElementById('sideEffects');
+        const breastfeedingSafetyElement = document.getElementById('breastfeedingSafety');
+
+        // Language switching
+        function switchLanguage(lang) {
+            currentLanguage = lang;
+            
+            // Update language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.lang === lang) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Show/hide English/Arabic elements
+            const englishElements = document.querySelectorAll('.title-en, .disclaimer-en, .tagline-en, .tracker-title-en, .tracker-desc-en, .trimester-text-en, .select-month-en, .search-title-en, .search-desc-en, .quick-search-title-en, .current-stage-text-en, .select-herb-text-en, .general-safety-en, .side-effects-en, .breastfeeding-title-en, .warning-text-en, .back-text-en, .footer-disclaimer-en, .footer-copyright-en, .select-herb-side-en');
+            const arabicElements = document.querySelectorAll('.title-ar, .disclaimer-ar, .tagline-ar, .tracker-title-ar, .tracker-desc-ar, .trimester-text-ar, .select-month-ar, .search-title-ar, .search-desc-ar, .quick-search-title-ar, .current-stage-text-ar, .select-herb-text-ar, .general-safety-ar, .side-effects-ar, .breastfeeding-title-ar, .warning-text-ar, .back-text-ar, .footer-disclaimer-ar, .footer-copyright-ar, .select-herb-side-ar');
+            
+            if (lang === 'en') {
+                englishElements.forEach(el => el.style.display = '');
+                arabicElements.forEach(el => el.style.display = 'none');
+                document.body.setAttribute('dir', 'ltr');
+                
+                // Update search placeholder
+                searchInput.placeholder = "Search for an herb (e.g., Ginger, Chamomile, Echinacea)";
+            } else {
+                englishElements.forEach(el => el.style.display = 'none');
+                arabicElements.forEach(el => el.style.display = '');
+                document.body.setAttribute('dir', 'rtl');
+                
+                // Update search placeholder
+                searchInput.placeholder = "ابحث عن عشب (مثل: زنجبيل، بابونج، إشنسا)";
+            }
+            
+            // Update tracker display based on current language
+            updateTrackerDisplay();
+            
+            // Update quick search buttons
+            updateQuickSearchButtons();
+            
+            // Update herb grid if it's visible
+            if (herbGrid.style.display !== 'none') {
+                initializeHerbGrid();
+            }
+            
+            // Update results if shown
+            const currentHerbId = resultsSection.getAttribute('data-current-herb');
+            if (currentHerbId) {
+                showHerbDetails(parseInt(currentHerbId));
+            }
+        }
+
+        // Update tracker display text
+        function updateTrackerDisplay() {
+            const trimesterNames = {
+                en: {
+                    1: "First Trimester",
+                    2: "Second Trimester",
+                    3: "Third Trimester"
+                },
+                ar: {
+                    1: "الثلث الأول",
+                    2: "الثلث الثاني",
+                    3: "الثلث الثالث"
+                }
+            };
+            
+            const monthRanges = {
+                en: {
+                    1: "1-3",
+                    2: "4-6",
+                    3: "7-9"
+                },
+                ar: {
+                    1: "١-٣",
+                    2: "٤-٦",
+                    3: "٧-٩"
+                }
+            };
+            
+            currentStageElement.textContent = trimesterNames[currentLanguage][currentTrimester];
+            currentMonthElement.textContent = currentLanguage === 'en' ? 
+                `Month ${monthRanges[currentLanguage][currentTrimester]}` : 
+                `الشهر ${monthRanges[currentLanguage][currentTrimester]}`;
+        }
+
+        // Initialize the month selector
+        function initializeMonthSelector() {
+            monthSelector.innerHTML = '';
+            
+            for (let i = 1; i <= 9; i++) {
+                const monthBtn = document.createElement('button');
+                monthBtn.className = 'month-btn';
+                monthBtn.textContent = i;
+                monthBtn.dataset.month = i;
+                
+                if (i === 1) {
+                    monthBtn.classList.add('active');
+                }
+                
+                monthBtn.addEventListener('click', () => {
+                    // Remove active class from all month buttons
+                    document.querySelectorAll('.month-btn').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    
+                    // Add active class to clicked button
+                    monthBtn.classList.add('active');
+                    
+                    // Update current month
+                    currentMonth = i;
+                    
+                    // Update trimester based on month
+                    if (i <= 3) {
+                        currentTrimester = 1;
+                        currentMonthRange = "1-3";
+                    } else if (i <= 6) {
+                        currentTrimester = 2;
+                        currentMonthRange = "4-6";
+                    } else {
+                        currentTrimester = 3;
+                        currentMonthRange = "7-9";
+                    }
+                    
+                    // Update tracker display
+                    updateTrackerDisplay();
+                    
+                    // Update trimester buttons
+                    updateTrimesterButtons();
+                    
+                    // Update stage text
+                    currentStageTextElement.textContent = currentLanguage === 'en' ? 
+                        `${currentStageElement.textContent} (Month ${i})` : 
+                        `${currentStageElement.textContent} (الشهر ${i})`;
+                    
+                    // If a herb is currently displayed, update its month-specific guidance
+                    const currentHerbId = resultsSection.getAttribute('data-current-herb');
+                    if (currentHerbId) {
+                        updateMonthSpecificGuidance(parseInt(currentHerbId));
+                    }
+                });
+                
+                monthSelector.appendChild(monthBtn);
+            }
+        }
+
+        // Update trimester buttons active state
+        function updateTrimesterButtons() {
+            trimesterBtns.forEach(btn => {
+                btn.classList.remove('active');
+                if (parseInt(btn.dataset.trimester) === currentTrimester) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        // Initialize trimester buttons
+        function initializeTrimesterButtons() {
+            trimesterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const trimester = parseInt(btn.dataset.trimester);
+                    currentTrimester = trimester;
+                    
+                    // Update month based on trimester
+                    let month;
+                    let monthRange;
+                    
+                    if (trimester === 1) {
+                        month = 1;
+                        monthRange = "1-3";
+                    } else if (trimester === 2) {
+                        month = 4;
+                        monthRange = "4-6";
+                    } else {
+                        month = 7;
+                        monthRange = "7-9";
+                    }
+                    
+                    currentMonth = month;
+                    currentMonthRange = monthRange;
+                    
+                    // Update tracker display
+                    updateTrackerDisplay();
+                    
+                    // Update month buttons
+                    document.querySelectorAll('.month-btn').forEach(monthBtn => {
+                        monthBtn.classList.remove('active');
+                        if (parseInt(monthBtn.dataset.month) === month) {
+                            monthBtn.classList.add('active');
+                        }
+                    });
+                    
+                    // Update trimester buttons
+                    updateTrimesterButtons();
+                    
+                    // Update stage text
+                    currentStageTextElement.textContent = currentStageElement.textContent;
+                    
+                    // If a herb is currently displayed, update its month-specific guidance
+                    const currentHerbId = resultsSection.getAttribute('data-current-herb');
+                    if (currentHerbId) {
+                        updateMonthSpecificGuidance(parseInt(currentHerbId));
+                    }
+                });
+            });
+        }
+
+        // Update quick search buttons based on loaded herbs
+        function updateQuickSearchButtons() {
+            quickSearchContainer.innerHTML = '';
+            
+            if (herbDatabase.length === 0) {
+                quickSearchContainer.innerHTML = '<p>No herbs loaded.</p>';
+                return;
+            }
+            
+            // Show first 8 herbs as quick search buttons
+            const herbsToShow = herbDatabase.slice(0, 8);
+            
+            herbsToShow.forEach(herb => {
+                const button = document.createElement('button');
+                button.className = 'quick-search-btn';
+                button.textContent = currentLanguage === 'en' ? herb.name_en : herb.name_ar;
+                button.dataset.herbId = herb.id;
+                
+                button.addEventListener('click', () => {
+                    showHerbDetails(herb.id);
+                });
+                
+                quickSearchContainer.appendChild(button);
+            });
+        }
+
+        // Get color based on safety status
+        function getHerbColor(safety) {
+            switch(safety) {
+                case 'safe': return '#4CAF50';
+                case 'caution': return '#FF9800';
+                case 'unsafe': return '#F44336';
+                default: return '#8b5e83';
+            }
+        }
+
+        // Get safety text based on language
+        function getSafetyText(safety, lang) {
+            const safetyTexts = {
+                en: {
+                    safe: 'Generally Safe',
+                    caution: 'Use With Caution',
+                    unsafe: 'Not Recommended'
+                },
+                ar: {
+                    safe: 'آمن بشكل عام',
+                    caution: 'استخدم بحذر',
+                    unsafe: 'غير موصى به'
+                }
+            };
+            
+            return safetyTexts[lang][safety] || safetyTexts[lang].caution;
+        }
+
+        // Update month-specific guidance
+        function updateMonthSpecificGuidance(herbId) {
+            const herb = herbDatabase.find(h => h.id === herbId);
+            if (!herb) return;
+            
+            const trimesterKey = `trimester${currentTrimester}_guidance_${currentLanguage}`;
+            const guidance = herb[trimesterKey] || [];
+            
+            let guidanceHTML = '';
+            
+            if (guidance && guidance.length > 0) {
+                guidanceHTML = '<ul>';
+                guidance.forEach(item => {
+                    guidanceHTML += `<li>${item}</li>`;
+                });
+                guidanceHTML += '</ul>';
+            } else {
+                const noGuidanceText = currentLanguage === 'en' ? 
+                    '<p>No specific guidance available for this trimester.</p>' : 
+                    '<p>لا توجد توجيهات محددة لهذا الثلث.</p>';
+                guidanceHTML = noGuidanceText;
+            }
+            
+            monthSpecificList.innerHTML = guidanceHTML;
+            
+            // Update stage text
+            const monthText = currentLanguage === 'en' ? `Month ${currentMonth}` : `الشهر ${currentMonth}`;
+            currentStageTextElement.textContent = `${currentStageElement.textContent} (${monthText})`;
+        }
+
+        // Initialize the herb grid
+        function initializeHerbGrid() {
+            herbGrid.innerHTML = '';
+            
+            if (herbDatabase.length === 0) {
+                const noDataText = currentLanguage === 'en' ? 
+                    '<h3>No Herb Data Available</h3><p>Please add your Excel data to the JavaScript code.</p>' : 
+                    '<h3>لا توجد بيانات عن الأعشاب</h3><p>الرجاء إضافة بيانات Excel إلى كود JavaScript.</p>';
+                
+                herbGrid.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 3rem; background-color: white; border-radius: 10px; box-shadow: var(--shadow);">
+                        ${noDataText}
+                    </div>
+                `;
+                return;
+            }
+            
+            herbDatabase.forEach(herb => {
+                const herbCard = document.createElement('div');
+                herbCard.className = 'herb-card';
+                herbCard.dataset.id = herb.id;
+                
+                let safetyClass = '';
+                let safetyText = getSafetyText(herb.safety, currentLanguage);
+                
+                switch(herb.safety) {
+                    case 'safe':
+                        safetyClass = 'safe';
+                        break;
+                    case 'caution':
+                        safetyClass = 'caution';
+                        break;
+                    case 'unsafe':
+                        safetyClass = 'unsafe';
+                        break;
+                }
+                
+                const name = currentLanguage === 'en' ? herb.name_en : herb.name_ar;
+                const description = currentLanguage === 'en' ? herb.description_en : herb.description_ar;
+                
+                herbCard.innerHTML = `
+                    <div class="herb-card-header" style="background-color: ${getHerbColor(herb.safety)}">
+                        ${name}
+                    </div>
+                    <div class="herb-card-body">
+                        <p class="herb-card-description">${description}</p>
+                        <span class="herb-card-status ${safetyClass}">${safetyText}</span>
+                    </div>
+                `;
+                
+                herbCard.addEventListener('click', () => showHerbDetails(herb.id));
+                herbGrid.appendChild(herbCard);
+            });
+        }
+
+        // Show herb details
+        function showHerbDetails(herbId) {
+            const herb = herbDatabase.find(h => h.id === herbId);
+            if (!herb) return;
+            
+            // Store current herb ID
+            resultsSection.setAttribute('data-current-herb', herbId);
+            
+            // Update herb details based on language
+            const name = currentLanguage === 'en' ? herb.name_en : herb.name_ar;
+            const otherName = currentLanguage === 'en' ? herb.name_ar : herb.name_en;
+            const safetyDescription = currentLanguage === 'en' ? herb.safety_description_en : herb.safety_description_ar;
+            const breastfeedingSafety = currentLanguage === 'en' ? herb.breastfeeding_safety_en : herb.breastfeeding_safety_ar;
+            
+            herbNameElement.textContent = name;
+            herbNameArabicElement.textContent = currentLanguage === 'en' ? `(${otherName})` : `(${otherName})`;
+            herbNameArabicElement.style.display = 'block';
+            
+            safetyDescriptionElement.textContent = safetyDescription;
+            breastfeedingSafetyElement.textContent = breastfeedingSafety;
+            
+            // Update side effects list
+            sideEffectsElement.innerHTML = '';
+            const sideEffects = currentLanguage === 'en' ? herb.side_effects_en : herb.side_effects_ar;
+            
+            if (sideEffects && sideEffects.length > 0) {
+                sideEffects.forEach(effect => {
+                    const li = document.createElement('li');
+                    li.textContent = effect;
+                    sideEffectsElement.appendChild(li);
+                });
+            } else {
+                const noEffectsText = currentLanguage === 'en' ? 
+                    '<li>No specific side effects listed</li>' : 
+                    '<li>لا توجد آثار جانبية محددة مدرجة</li>';
+                sideEffectsElement.innerHTML = noEffectsText;
+            }
+            
+            // Update safety status
+            let safetyClass = '';
+            let safetyText = getSafetyText(herb.safety, currentLanguage);
+            
+            switch(herb.safety) {
+                case 'safe':
+                    safetyClass = 'safe';
+                    break;
+                case 'caution':
+                    safetyClass = 'caution';
+                    break;
+                case 'unsafe':
+                    safetyClass = 'unsafe';
+                    break;
+            }
+            
+            safetyStatusElement.className = `safety-status ${safetyClass}`;
+            safetyStatusElement.textContent = safetyText;
+            
+            // Update trimester safety cards
+            trimesterSafetyElement.innerHTML = '';
+            
+            for (let i = 1; i <= 3; i++) {
+                const safetyKey = `trimester${i}_safety`;
+                const safety = herb[safetyKey] || 'caution';
+                const safetyText = getSafetyText(safety, currentLanguage);
+                
+                let trimesterSafetyClass = '';
+                
+                switch(safety) {
+                    case 'safe':
+                        trimesterSafetyClass = 'safe';
+                        break;
+                    case 'caution':
+                        trimesterSafetyClass = 'caution';
+                        break;
+                    case 'unsafe':
+                        trimesterSafetyClass = 'unsafe';
+                        break;
+                }
+                
+                const trimesterNames = {
+                    en: {
+                        1: 'First Trimester',
+                        2: 'Second Trimester',
+                        3: 'Third Trimester'
+                    },
+                    ar: {
+                        1: 'الثلث الأول',
+                        2: 'الثلث الثاني',
+                        3: 'الثلث الثالث'
+                    }
+                };
+                
+                const trimesterName = trimesterNames[currentLanguage][i];
+                
+                const trimesterCard = document.createElement('div');
+                trimesterCard.className = `trimester-card ${i === 1 ? 'first' : i === 2 ? 'second' : 'third'}`;
+                trimesterCard.innerHTML = `
+                    <h4>${trimesterName}</h4>
+                    <div class="trimester-status ${trimesterSafetyClass}">${safetyText}</div>
+                `;
+                
+                trimesterSafetyElement.appendChild(trimesterCard);
+            }
+            
+            // Update month-specific guidance
+            updateMonthSpecificGuidance(herbId);
+            
+            // Show results section and hide herb grid
+            resultsSection.classList.add('active');
+            herbGrid.style.display = 'none';
+            
+            // Scroll to top of results
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        // Search functionality (supports both English and Arabic)
+        function searchHerbs(query) {
+            if (!query.trim()) {
+                initializeHerbGrid();
+                return;
+            }
+            
+            const filteredHerbs = herbDatabase.filter(herb => {
+                // Search in English name and terms
+                const englishMatch = 
+                    herb.name_en.toLowerCase().includes(query.toLowerCase()) ||
+                    (herb.search_terms_en && herb.search_terms_en.some(term => 
+                        term.toLowerCase().includes(query.toLowerCase()))) ||
+                    herb.description_en.toLowerCase().includes(query.toLowerCase());
+                
+                // Search in Arabic name and terms
+                const arabicMatch = 
+                    herb.name_ar.includes(query) ||
+                    (herb.search_terms_ar && herb.search_terms_ar.some(term => 
+                        term.includes(query))) ||
+                    herb.description_ar.includes(query);
+                
+                return englishMatch || arabicMatch;
+            });
+            
+            herbGrid.innerHTML = '';
+            
+            if (filteredHerbs.length === 0) {
+                const noResultsText = currentLanguage === 'en' ? 
+                    `<h3>No herbs found for "${query}"</h3><p>Try searching for a different herb.</p>` : 
+                    `<h3>لم يتم العثور على أعشاب لـ "${query}"</h3><p>حاول البحث عن عشب مختلف.</p>`;
+                
+                herbGrid.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 2rem; background-color: white; border-radius: 10px; box-shadow: var(--shadow);">
+                        ${noResultsText}
+                    </div>
+                `;
+            } else {
+                filteredHerbs.forEach(herb => {
+                    const herbCard = document.createElement('div');
+                    herbCard.className = 'herb-card';
+                    herbCard.dataset.id = herb.id;
+                    
+                    let safetyClass = '';
+                    let safetyText = getSafetyText(herb.safety, currentLanguage);
+                    
+                    switch(herb.safety) {
+                        case 'safe':
+                            safetyClass = 'safe';
+                            break;
+                        case 'caution':
+                            safetyClass = 'caution';
+                            break;
+                        case 'unsafe':
+                            safetyClass = 'unsafe';
+                            break;
+                    }
+                    
+                    const name = currentLanguage === 'en' ? herb.name_en : herb.name_ar;
+                    const description = currentLanguage === 'en' ? herb.description_en : herb.description_ar;
+                    
+                    herbCard.innerHTML = `
+                        <div class="herb-card-header" style="background-color: ${getHerbColor(herb.safety)}">
+                            ${name}
+                        </div>
+                        <div class="herb-card-body">
+                            <p class="herb-card-description">${description}</p>
+                            <span class="herb-card-status ${safetyClass}">${safetyText}</span>
+                        </div>
+                    `;
+                    
+                    herbCard.addEventListener('click', () => showHerbDetails(herb.id));
+                    herbGrid.appendChild(herbCard);
+                });
+            }
+            
+            // Ensure herb grid is visible
+            herbGrid.style.display = 'grid';
+            resultsSection.classList.remove('active');
+        }
+
+        // Event Listeners
+        searchInput.addEventListener('input', (e) => {
+            searchHerbs(e.target.value);
+        });
+
+        backBtn.addEventListener('click', () => {
+            resultsSection.classList.remove('active');
+            herbGrid.style.display = 'grid';
+            searchInput.value = '';
+            initializeHerbGrid();
+        });
+
+        // Language switcher event listeners
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                switchLanguage(btn.dataset.lang);
+            });
+        });
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', () => {
+            // Process Excel data
+            herbDatabase = processExcelData(excelJsonData);
+            
+            // Initialize UI
+            initializeMonthSelector();
+            initializeTrimesterButtons();
+            initializeHerbGrid();
+            updateQuickSearchButtons();
+            
+            console.log(`Loaded ${herbDatabase.length} herbs from Excel data`);
+            
+            // Set default language
+            switchLanguage('en');
+        });
+    </script>
+</body>
+</html>
