@@ -481,7 +481,7 @@
             color: white;
         }
 
-        /* Rating Section - Now at the bottom */
+        /* Rating Section - Fixed for mobile */
         .rating-section {
             background: linear-gradient(135deg, #fff8e7, #fff);
             border-radius: 15px;
@@ -532,12 +532,15 @@
         }
 
         .star.filled {
+            color: var(--star-color) !important;
+        }
+
+        .star.hover-filled {
             color: var(--star-color);
         }
 
         .star:hover {
             transform: scale(1.2);
-            color: #ffd700;
         }
 
         .rating-average {
@@ -568,8 +571,12 @@
             font-size: 1.5rem;
         }
 
-        .average-stars i.empty {
+        .average-stars i.far {
             color: rgba(255, 255, 255, 0.3);
+        }
+
+        .average-stars i.fas {
+            color: #ffd700;
         }
 
         .rating-count {
@@ -701,6 +708,10 @@
             .average-number {
                 font-size: 2.5rem;
             }
+            
+            .star {
+                font-size: 2rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -730,10 +741,6 @@
 
             .trimester-btn {
                 justify-content: center;
-            }
-            
-            .star {
-                font-size: 2rem;
             }
             
             .rating-average {
@@ -1026,9 +1033,10 @@
                 }
             }, 3000);
             
-            // Reset star colors
+            // Reset star colors - remove all filled and hover classes
             document.querySelectorAll('.star').forEach(star => {
                 star.classList.remove('filled');
+                star.classList.remove('hover-filled');
             });
         }
 
@@ -1689,22 +1697,27 @@
             const stars = document.querySelectorAll('.star');
             
             stars.forEach(star => {
+                // Mouse over - preview the rating
                 star.addEventListener('mouseover', function() {
                     const rating = parseInt(this.dataset.rating);
                     stars.forEach(s => {
                         const sRating = parseInt(s.dataset.rating);
                         if (sRating <= rating) {
-                            s.classList.add('filled');
+                            s.classList.add('hover-filled');
                         } else {
-                            s.classList.remove('filled');
+                            s.classList.remove('hover-filled');
                         }
                     });
                 });
                 
+                // Mouse out - remove preview
                 star.addEventListener('mouseout', function() {
-                    stars.forEach(s => s.classList.remove('filled'));
+                    stars.forEach(s => {
+                        s.classList.remove('hover-filled');
+                    });
                 });
                 
+                // Click - submit rating
                 star.addEventListener('click', function() {
                     const rating = parseInt(this.dataset.rating);
                     submitRating(rating);
