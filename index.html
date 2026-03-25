@@ -3275,6 +3275,12 @@ background-size: cover; /* keep your other styles: font, color, etc. */
             initRatingSystem();
             switchLanguage('en');
         });
+                document.addEventListener('contextmenu', function(e) {e.preventDefault();});
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'F12' || (e.ctrlKey && e.key === 'u')) {
+                    e.preventDefault();
+                }
+            });
     </script>
 </body>
 </html>
